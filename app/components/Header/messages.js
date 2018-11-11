@@ -16,9 +16,9 @@ export default defineMessages({
     id: `${scope}.features`,
     defaultMessage: 'Features',
   },
-  moose1: {
-    id: `${scope}.moose1`,
-    defaultMessage: 'Moose Home',
+  posts: {
+    id: `${scope}.posts`,
+    defaultMessage: 'Posts',
   },
   moose2: {
     id: `${scope}.moose2`,

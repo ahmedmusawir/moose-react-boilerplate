@@ -6,6 +6,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
+// Bootstrap 4
+import { Container, Row, Col } from 'reactstrap';
 
 import H1 from 'components/H1';
 import messages from './messages';
@@ -22,7 +24,7 @@ export default class FeaturePage extends React.Component {
 
   render() {
     return (
-      <div>
+      <Container>
         <Helmet>
           <title>Feature Page</title>
           <meta
@@ -79,7 +81,7 @@ export default class FeaturePage extends React.Component {
             </p>
           </ListItem>
         </List>
-      </div>
+      </Container>
     );
   }
 }

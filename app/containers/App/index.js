@@ -13,6 +13,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
 import FeaturePage from 'containers/FeaturePage/Loadable';
+import PostsPage from 'containers/PostsPage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -21,7 +22,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import GlobalStyle from '../../global-styles';
 
 const AppWrapper = styled.div`
-  border: 1px solid red;
+  border: 0px solid red;
 `;
 
 export default function App() {
@@ -37,6 +38,7 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/features" component={FeaturePage} />
+        <Route path="/posts" component={PostsPage} />
         <Route path="" component={NotFoundPage} />
       </Switch>
       <Footer />

@@ -8,14 +8,14 @@ import { defineMessages } from 'react-intl';
 export const scope = 'boilerplate.components.Footer';
 
 export default defineMessages({
-  licenseMessage: {
-    id: `${scope}.license.message`,
-    defaultMessage: 'This project is licensed under the MIT license.',
+  mooseMessage: {
+    id: `${scope}.moose.message`,
+    defaultMessage: 'This project has been Moosified.',
   },
   authorMessage: {
-    id: `${scope}.author.message`,
+    id: `${scope}.author.message1`,
     defaultMessage: `
-      Made with love by {author}.
+      Made after a brain upgrade by {author}.
     `,
   },
 });

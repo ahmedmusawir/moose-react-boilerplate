@@ -19,6 +19,10 @@ import {
   makeSelectLoading,
   makeSelectError,
 } from 'containers/App/selectors';
+
+// Bootstrap 4
+import { Container, Row, Col } from 'reactstrap';
+
 import H2 from 'components/H2';
 import ReposList from 'components/ReposList';
 import AtPrefix from './AtPrefix';
@@ -26,8 +30,6 @@ import CenteredSection from './CenteredSection';
 import Form from './Form';
 import Input from './Input';
 import Section from './Section';
-//Bootstrap 4 
-import { Container, Row, Col } from 'reactstrap';
 
 import messages from './messages';
 import { loadRepos } from '../App/actions';

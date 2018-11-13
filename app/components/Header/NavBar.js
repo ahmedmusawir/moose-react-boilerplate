@@ -57,6 +57,11 @@ export default class Example extends React.Component {
                   <FormattedMessage {...messages.posts} />
                 </NavLink>
               </NavItem>
+              <NavItem>
+                <NavLink tag={Link} to="/users">
+                  <FormattedMessage {...messages.users} />
+                </NavLink>
+              </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
                   Options

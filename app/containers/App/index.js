@@ -14,6 +14,7 @@ import { Switch, Route } from 'react-router-dom';
 import HomePage from 'containers/HomePage/Loadable';
 import FeaturePage from 'containers/FeaturePage/Loadable';
 import PostsPage from 'containers/PostsPage/Loadable';
+import UsersPage from 'containers/UsersPage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -39,6 +40,7 @@ export default function App() {
         <Route exact path="/" component={HomePage} />
         <Route path="/features" component={FeaturePage} />
         <Route path="/posts" component={PostsPage} />
+        <Route path="/users" component={UsersPage} />
         <Route path="" component={NotFoundPage} />
       </Switch>
       <Footer />

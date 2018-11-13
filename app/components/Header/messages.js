@@ -20,8 +20,8 @@ export default defineMessages({
     id: `${scope}.posts`,
     defaultMessage: 'Posts',
   },
-  moose2: {
-    id: `${scope}.moose2`,
-    defaultMessage: 'Moose Features',
+  users: {
+    id: `${scope}.users`,
+    defaultMessage: 'Forms',
   },
 });

@@ -21,7 +21,7 @@ import {
 } from 'containers/App/selectors';
 
 // Bootstrap 4
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, Button } from 'reactstrap';
 
 import H2 from 'components/H2';
 import ReposList from 'components/ReposList';
@@ -33,8 +33,8 @@ import Section from './Section';
 
 import messages from './messages';
 import { loadRepos } from '../App/actions';
-import { changeUsername } from './actions';
-import { makeSelectUsername } from './selectors';
+import { changeUsername, buttonClick } from './actions';
+import { makeSelectUsername, makeSelectBtnValue } from './selectors';
 import reducer from './reducer';
 import saga from './saga';
 
@@ -66,6 +66,8 @@ export class HomePage extends React.PureComponent {
             content="A React.js Boilerplate application homepage"
           />
         </Helmet>
+        {/* <Button onClick={this.props.onButtonClick} value="WTF2018">moose</Button> */}
+        <Button onClick={this.props.onButtonClick} value={this.props.btnValue}>Click to Find!</Button>
         <Container>
           <CenteredSection>
             <H2>
@@ -157,25 +159,28 @@ HomePage.propTypes = {
   repos: PropTypes.oneOfType([PropTypes.array, PropTypes.bool]),
   onSubmitForm: PropTypes.func,
   username: PropTypes.string,
+  btnValue: PropTypes.string,
   onChangeUsername: PropTypes.func,
 };
+
+const mapStateToProps = createStructuredSelector({
+  repos: makeSelectRepos(),
+  username: makeSelectUsername(),
+  btnValue: makeSelectBtnValue(),
+  loading: makeSelectLoading(),
+  error: makeSelectError(),
+});
 
 export function mapDispatchToProps(dispatch) {
   return {
     onChangeUsername: evt => dispatch(changeUsername(evt.target.value)),
+    onButtonClick: evt => dispatch(buttonClick(evt.target.value)),
     onSubmitForm: evt => {
       if (evt !== undefined && evt.preventDefault) evt.preventDefault();
       dispatch(loadRepos());
     },
   };
 }
-
-const mapStateToProps = createStructuredSelector({
-  repos: makeSelectRepos(),
-  username: makeSelectUsername(),
-  loading: makeSelectLoading(),
-  error: makeSelectError(),
-});
 
 const withConnect = connect(
   mapStateToProps,

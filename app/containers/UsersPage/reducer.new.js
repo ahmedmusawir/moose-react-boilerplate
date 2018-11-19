@@ -4,9 +4,11 @@
  *
  */
 import { fromJS } from 'immutable';
+
 import { LOAD_USERS_SUCCESS, LOAD_USERS, LOAD_USERS_ERROR } from './constants';
 
-export const initialState = fromJS({
+// The initial state of the App
+const initialState = fromJS({
   loading: false,
   error: false,
   userData: false,

@@ -15,7 +15,7 @@
  *    }
  */
 
-import { CHANGE_USERNAME } from './constants';
+import { CHANGE_USERNAME, BUTTON_CLICK } from './constants';
 
 /**
  * Changes the input field of the form
@@ -28,5 +28,20 @@ export function changeUsername(name) {
   return {
     type: CHANGE_USERNAME,
     name,
+  };
+}
+
+/**
+ * Collects the value text of the Button moose
+ *
+ * @param  {value} value of the button text of the BUTTON component
+ *
+ * @return {object}    An action object with a type of BUTTON_CLICK
+ */
+export function buttonClick(value) {
+  console.log(`Button value from Action BUTTON_CLICK: ${value}`);
+  return {
+    type: BUTTON_CLICK,
+    value,
   };
 }

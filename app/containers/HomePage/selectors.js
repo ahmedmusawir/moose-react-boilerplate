@@ -10,4 +10,7 @@ const selectHome = state => state.get('homePage', initialState);
 const makeSelectUsername = () =>
   createSelector(selectHome, homeState => homeState.get('username'));
 
-export { selectHome, makeSelectUsername };
+const makeSelectBtnValue = () =>
+  createSelector(selectHome, homeState => homeState.get('btnValue'));
+
+export { selectHome, makeSelectUsername, makeSelectBtnValue };

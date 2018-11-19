@@ -11,6 +11,6 @@ export const scope = 'app.containers.UsersPage';
 export default defineMessages({
   header: {
     id: `${scope}.header`,
-    defaultMessage: 'This is the sample form container!',
+    defaultMessage: 'This is the UsersPage container!',
   },
 });

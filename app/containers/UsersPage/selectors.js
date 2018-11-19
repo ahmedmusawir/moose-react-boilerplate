@@ -1,19 +1,37 @@
 import { createSelector } from 'reselect';
-import { List } from 'immutable';
+import { initialState } from './reducer';
 
-const selectUsersPage = state => state.get('usersPage');
+/**
+ * Direct selector to the usersPage state domain
+ */
 
-const makeSelectUsers = () =>
-  createSelector(selectUsersPage, usersState => {
-    const users = usersState.get('users');
-    if (List.isList(users)) {
-      return users.toJS();
-    }
+const selectUsersPageDomain = state => state.get('usersPage', initialState);
 
-    return users;
-  });
+/**
+ * Other specific selectors
+ */
 
-const makeSelectUser = () =>
-  createSelector(selectUsersPage, usersState => usersState.get('user'));
+/**
+ * Default selector used by UsersPage
+ */
 
-export { selectUsersPage, makeSelectUsers, makeSelectUser };
+const makeSelectUsersPage = () =>
+  createSelector(selectUsersPageDomain, userState => userState.toJS());
+
+// const makeSelectLoading = () =>
+//   createSelector(selectUsersPageDomain, userState => userState.get('loading'));
+
+// const makeSelectError = () =>
+//   createSelector(selectUsersPageDomain, userState => userState.get('error'));
+
+// const makeSelectUsers = () =>
+//   createSelector(selectUsersPageDomain, userState => userState.get('userData'));
+
+// export {
+//   selectUsersPageDomain,
+//   makeSelectUsers,
+//   makeSelectLoading,
+//   makeSelectError,
+// };
+
+export default makeSelectUsersPage;

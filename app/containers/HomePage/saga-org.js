@@ -4,11 +4,9 @@
 
 import { call, put, select, takeLatest } from 'redux-saga/effects';
 import { LOAD_REPOS, LOAD_REPOS_BTN } from 'containers/App/constants';
-import { BUTTON_CLICK } from 'containers/HomePage/constants';
 import { reposLoaded, repoLoadingError } from 'containers/App/actions';
 
 import request from 'utils/request';
-import axios from 'axios';
 import {
   makeSelectUsername,
   makeSelectBtnValue,
@@ -34,20 +32,20 @@ export function* getRepos() {
 /**
  * Github repos request/response handler
  */
-export function* getBtnData() {
+export function* getBtnRepos() {
   // Select username from store
   const username = yield select(makeSelectBtnValue());
-  console.log(`From getBtnRepos saga: ${username}`);
-  const requestURL = `https://api.github.com/users/${username}/repos?type=all&sort=updated`;
+  console.log(`From getBtnRepos sage: ${username}`);
+  // const requestURL = `https://api.github.com/users/${username}/repos?type=all&sort=updated`;
 
-  try {
-    // Call our request helper (see 'utils/request')
-    const repos = yield call(request, requestURL);
-    console.log(repos);
-    yield put(reposLoaded(repos, username));
-  } catch (err) {
-    yield put(repoLoadingError(err));
-  }
+  // try {
+  //   // Call our request helper (see 'utils/request')
+  //   const repos = yield call(request, requestURL);
+  //   console.log(repos);
+  //   yield put(reposLoaded(repos, username));
+  // } catch (err) {
+  //   yield put(repoLoadingError(err));
+  // }
 }
 
 /**
@@ -59,6 +57,5 @@ export default function* githubData() {
   // It returns task descriptor (just like fork) so we can continue execution
   // It will be cancelled automatically on component unmount
   yield takeLatest(LOAD_REPOS, getRepos);
-  // yield takeLatest(LOAD_REPOS_BTN, getBtnRepos);
-  yield takeLatest(BUTTON_CLICK, getBtnData);
+  yield takeLatest(LOAD_REPOS_BTN, getBtnRepos);
 }

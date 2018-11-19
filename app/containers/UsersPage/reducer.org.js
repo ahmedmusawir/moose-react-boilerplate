@@ -3,9 +3,13 @@
  * UsersPage reducer
  *
  */
-
 import { fromJS } from 'immutable';
-import { DEFAULT_ACTION } from './constants';
+import {
+  LOAD_USERS_SUCCESS,
+  LOAD_USERS,
+  LOAD_USERS_ERROR,
+  DEFAULT_ACTION,
+} from './constants';
 
 export const initialState = fromJS({});
 

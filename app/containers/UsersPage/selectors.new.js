@@ -18,5 +18,19 @@ const selectUsersPageDomain = state => state.get('usersPage', initialState);
 const makeSelectUsersPage = () =>
   createSelector(selectUsersPageDomain, substate => substate.toJS());
 
+const makeSelectLoading = () =>
+  createSelector(selectUsersPageDomain, substate => substate.get('loading'));
+
+const makeSelectError = () =>
+  createSelector(selectUsersPageDomain, substate => substate.get('error'));
+
+const makeSelectUsers = () =>
+  createSelector(selectUsersPageDomain, substate => substate.get('userData'));
+
+export {
+  selectUsersPageDomain,
+  makeSelectUsers,
+  makeSelectLoading,
+  makeSelectError,
+};
 export default makeSelectUsersPage;
-export { selectUsersPageDomain };

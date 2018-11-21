@@ -16,7 +16,7 @@ const selectUsersPageDomain = state => state.get('usersPage', initialState);
  */
 
 const makeSelectUsersPage = () =>
-  createSelector(selectUsersPageDomain, userState => userState.toJS());
+  createSelector(selectUsersPageDomain, usersState => usersState.toJS());
 
 // const makeSelectLoading = () =>
 //   createSelector(selectUsersPageDomain, userState => userState.get('loading'));

@@ -14,11 +14,13 @@ import { compose } from 'redux';
 
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
-import makeSelectUsersPage, {
-  makeSelectUsers,
-  makeSelectLoading,
-  makeSelectError,
-} from './selectors';
+// import makeSelectUsersPage, {
+//   makeSelectUsers,
+//   makeSelectLoading,
+//   makeSelectError,
+// } from './selectors';
+import { Container, Row, ListGroup, ListGroupItem } from 'reactstrap';
+import makeSelectUsersPage from './selectors';
 import { loadUsers as actionLoadUsers } from './actions';
 import reducer from './reducer';
 import saga from './saga';
@@ -28,16 +30,22 @@ import messages from './messages';
 export class UsersPage extends React.PureComponent {
   componentDidMount() {
     const { usersPage, loadUsers } = this.props;
-    const { loading, error, userData } = usersPage;
-    if (!loading && !error && userData === false) {
+    const { loading, error, usersData } = usersPage;
+    if (!loading && !error && usersData === false) {
       loadUsers();
     }
   }
 
   render() {
-    const { usersPage } = this.props;
+    const { usersData } = this.props.usersPage;
+    let usersList = '';
+    if (usersData) {
+      usersList = usersData.map(user => (
+        <ListGroupItem key={user.id}>{user.name}</ListGroupItem>
+      ));
+    }
     // const { usersPage, loading, error, users } = this.props;
-    console.log(usersPage.userData);
+    console.log(usersData);
     // console.log(usersPage.loading);
     // console.log(usersPage.error);
     // console.log(loading);
@@ -51,6 +59,9 @@ export class UsersPage extends React.PureComponent {
           <meta name="description" content="Description of UsersPage" />
         </Helmet>
         <FormattedMessage {...messages.header} />
+        <Container>
+          <ListGroup>{usersList}</ListGroup>
+        </Container>
       </div>
     );
   }

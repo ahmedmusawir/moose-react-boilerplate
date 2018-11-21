@@ -67,7 +67,9 @@ export class HomePage extends React.PureComponent {
           />
         </Helmet>
         {/* <Button onClick={this.props.onButtonClick} value="WTF2018">moose</Button> */}
-        <Button onClick={this.props.onButtonClick} value={this.props.btnValue}>Click to Find!</Button>
+        <Button onClick={this.props.onButtonClick} value={this.props.btnValue}>
+          Click to Find!
+        </Button>
         <Container>
           <CenteredSection>
             <H2>

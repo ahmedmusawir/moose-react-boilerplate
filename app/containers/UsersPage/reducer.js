@@ -9,7 +9,7 @@ import { LOAD_USERS_SUCCESS, LOAD_USERS, LOAD_USERS_ERROR } from './constants';
 export const initialState = fromJS({
   loading: false,
   error: false,
-  userData: false,
+  usersData: false,
 });
 
 function usersPageReducer(state = initialState, action) {
@@ -18,12 +18,12 @@ function usersPageReducer(state = initialState, action) {
       return state
         .set('loading', true)
         .set('error', false)
-        .set('userData', false);
+        .set('usersData', false);
     case LOAD_USERS_SUCCESS:
       return state
-        .set('userData', action.users)
         .set('loading', false)
-        .set('error', false);
+        .set('error', false)
+        .set('usersData', action.users);
     case LOAD_USERS_ERROR:
       return state.set('error', action.error).set('loading', false);
     default:

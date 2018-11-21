@@ -3,7 +3,7 @@ import { LOAD_USERS } from 'containers/UsersPage/constants';
 import { usersLoaded, userLoadingError } from 'containers/UsersPage/actions';
 import axios from 'axios';
 
-import request from 'utils/request';
+// import request from 'utils/request';
 
 /**
  * Github repos request/response handler

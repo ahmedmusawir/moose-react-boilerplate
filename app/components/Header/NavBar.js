@@ -53,13 +53,13 @@ export default class Example extends React.Component {
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={Link} to="/posts">
-                  <FormattedMessage {...messages.posts} />
+                <NavLink tag={Link} to="/media">
+                  <FormattedMessage {...messages.media} />
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={Link} to="/users">
-                  <FormattedMessage {...messages.users} />
+                <NavLink tag={Link} to="/about">
+                  <FormattedMessage {...messages.about} />
                 </NavLink>
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
@@ -67,8 +67,12 @@ export default class Example extends React.Component {
                   Options
                 </DropdownToggle>
                 <DropdownMenu right>
-                  <DropdownItem>Option 1</DropdownItem>
-                  <DropdownItem>Option 2</DropdownItem>
+                  <DropdownItem tag={Link} to="/users">
+                    <FormattedMessage {...messages.users} />
+                  </DropdownItem>
+                  <DropdownItem tag={Link} to="/old-home">
+                    <FormattedMessage {...messages.oldhome} />
+                  </DropdownItem>
                   <DropdownItem divider />
                   <DropdownItem>Reset</DropdownItem>
                 </DropdownMenu>

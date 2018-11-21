@@ -16,9 +16,17 @@ export default defineMessages({
     id: `${scope}.features`,
     defaultMessage: 'Features',
   },
-  posts: {
-    id: `${scope}.posts`,
-    defaultMessage: 'Posts',
+  media: {
+    id: `${scope}.media`,
+    defaultMessage: 'Media',
+  },
+  about: {
+    id: `${scope}.about`,
+    defaultMessage: 'About',
+  },
+  oldhome: {
+    id: `${scope}.oldhome`,
+    defaultMessage: 'OldHome',
   },
   users: {
     id: `${scope}.users`,

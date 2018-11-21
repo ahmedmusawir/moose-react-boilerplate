@@ -35,7 +35,7 @@ export default class Example extends React.Component {
   render() {
     return (
       <div>
-        <Navbar color="dark" dark expand="md" className="mb-5">
+        <Navbar color="dark" dark expand="md">
           <NavbarBrand tag={Link} to="/">
             reactstrap
           </NavbarBrand>
@@ -47,11 +47,11 @@ export default class Example extends React.Component {
                   <FormattedMessage {...messages.home} />
                 </NavLink>
               </NavItem>
-              <NavItem>
+              {/* <NavItem>
                 <NavLink tag={Link} to="/features">
                   <FormattedMessage {...messages.features} />
                 </NavLink>
-              </NavItem>
+              </NavItem> */}
               <NavItem>
                 <NavLink tag={Link} to="/media">
                   <FormattedMessage {...messages.media} />

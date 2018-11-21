@@ -1,3 +1,6 @@
+/**
+ * UsersPage Sagas
+ */
 import { takeLatest, call, put, select } from 'redux-saga/effects';
 import { LOAD_USERS } from 'containers/UsersPage/constants';
 import { usersLoaded, userLoadingError } from 'containers/UsersPage/actions';
@@ -5,9 +8,6 @@ import axios from 'axios';
 
 // import request from 'utils/request';
 
-/**
- * Github repos request/response handler
- */
 export function* getUsers() {
   // Select username from store
   const requestURL = 'http://128.199.122.47:3001/users';

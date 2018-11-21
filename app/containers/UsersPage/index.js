@@ -45,7 +45,7 @@ export class UsersPage extends React.PureComponent {
       ));
     }
     // const { usersPage, loading, error, users } = this.props;
-    console.log(usersData);
+    // console.log(usersData);
     // console.log(usersPage.loading);
     // console.log(usersPage.error);
     // console.log(loading);
@@ -68,7 +68,7 @@ export class UsersPage extends React.PureComponent {
 }
 
 UsersPage.propTypes = {
-  dispatch: PropTypes.func.isRequired,
+  loadUsers: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = createStructuredSelector({
